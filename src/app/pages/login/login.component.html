@@ -1,0 +1,22 @@
+<!-- ---------------------------------- LOGIN INTERFACE ----------------------------------- -->
+<section class="login-container full-body">
+
+  <form [formGroup]="loginform" (ngSubmit)="onSubmitLogin(loginform)">
+    <input 
+    placeholder="Usuario o código" 
+    formControlName="emailForm" 
+    [formControl]="loginform.controls['emailForm']"
+    [type]="'text'" required>
+
+    <input
+      placeholder="Contraseña"
+      formControlName="passForm"
+      [formControl]="loginform.controls['passForm']"
+      [type]="'text'"
+          required>
+          
+    <div class="btn-ingresar">
+        <button mat-raised-button type="submit">Ingresar</button>
+    </div>
+  </form>
+</section>

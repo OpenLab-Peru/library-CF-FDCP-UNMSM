@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+
+
+<p>
+  Hola - Home <br>
+  Vamos al <a [routerLink]="['/contacto']">Contacto</a>
+  <br>
+  Hoy es {{fecha | date:'dd/MM/yyyy'}}
+  Mira: <img [src]="url | image: 'Hola Pipe'" alt="">
+  <!-- | date:'dd/MM/yyyy es un pipe de Angular, para dar formato a la fecha -->
+
+</p>
+
+  <div *ngIf="gatito" (click)="gatito=!gatito">Verdad o Reto</div>
+  <div *ngIf="!gatito" (click)="gatito=!gatito">Falso </div>
+<div *ngFor="let persona of arreglo; let i = index">
+  {{i+1}}
+  {{persona.nombre}}
+  {{persona.apellido}}
+  {{persona.edad}}
+  
+</div>
+
+<app-footer></app-footer>
