@@ -4,7 +4,7 @@ django-cors-headers
 django-crispy-forms
 django-dotenv
 django-filter
-django-material
+django-grappelli==2.10.2
 django-model-utils
 django-pipeline
 django-stdimage
