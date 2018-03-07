@@ -14,7 +14,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 
-from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 
@@ -26,23 +25,14 @@ from rest_framework.documentation import include_docs_urls
 
 
 API_TITLE = "library"
-API_DESCRIPTION = '...'
+API_DESCRIPTION = "..."
 
 
 urlpatterns = [
+    url(r"^grappelli/", include("grappelli.urls")),
     url(r"^admin/", admin.site.urls),
-    url(
-        r"^api-auth/",
-        include("rest_framework.urls", namespace="rest_framework")),
     url(
         r"^docs/",
         include_docs_urls(title=API_TITLE, description=API_DESCRIPTION)),
-    url(r"^api/", include(router.urls, namespace="api")),
+    url(r"^api/v1/", include(router.urls, namespace="api")),
 ]
-
-if settings.DEBUG:
-    import debug_toolbar
-
-    urlpatterns = [
-        url(r"^__debug__/", include(debug_toolbar.urls)),
-    ] + urlpatterns

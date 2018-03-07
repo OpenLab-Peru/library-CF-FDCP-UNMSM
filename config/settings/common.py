@@ -23,8 +23,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "foo")
 
 DJANGO_APPS = (
     # Admin third party app, but need put before "django.contrib.admin"
-    "material",
-    "material.admin",
+    "grappelli",
 
     "django.contrib.admin",
     "django.contrib.auth",
@@ -42,6 +41,7 @@ THIRD_PARTY_APPS = (
 
 LOCAL_APPS = (
     "apps.common",
+    "apps.books",
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -133,3 +133,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     "hostname.example.com",
 #     "localhost:8000",
 #     "127.0.0.1:9000",)
+
+
+# Django Grapelli config
+GRAPPELLI_ADMIN_TITLE = "Centro Federado de Derecho y Ciencia Politica"
