@@ -37,6 +37,7 @@ THIRD_PARTY_APPS = (
     "pipeline",
     "rest_framework",
     "corsheaders",
+    "django_filters",
 )
 
 LOCAL_APPS = (
@@ -122,7 +123,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Django Rest Framework Settings
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAdminUser",)
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.IsAuthenticatedOrReadOnly",),
+    "DEFAULT_FILTER_BACKENDS": (
+        "django_filters.rest_framework.DjangoFilterBackend",),
 }
 
 # Django Rest Framework CORS configuration

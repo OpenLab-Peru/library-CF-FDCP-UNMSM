@@ -17,6 +17,7 @@ from .serializers import BookModelSerializer, TagModelSerializer
 class BookModelViewSet(ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookModelSerializer
+    filter_fields = ("tag",)
 
 
 class TagModelViewSet(ModelViewSet):
