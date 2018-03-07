@@ -1,0 +1,10 @@
+-r common.in
+
+coverage
+django-extensions
+flake8
+ipython
+model_mommy
+pip-tools
+pydotplus
+pygraphviz
