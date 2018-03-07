@@ -8,9 +8,11 @@
 
 
 # Local imports
+from .viewsets import BookModelViewSet, TagModelViewSet
 
 
 # Create your routers here.
-# router_list = (
-#     ("model", ModelViewSet),
-# )
+books = (
+    (r"book", BookModelViewSet),
+    (r"tag", TagModelViewSet),
+)
